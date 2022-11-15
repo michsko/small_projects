@@ -9,3 +9,13 @@ morse_alphabet = {"A" : ".-",  'B' : '-...',  'C' : '-.-.', 'D' : '-..', 'E' : '
 
 
 
+
+converted_sentence = []
+sentence = input("What do you wanna translate into morse code? :")
+letters = list(sentence.upper())
+
+for letter in letters:
+    translated_letter = morse_alphabet[letter]
+    converted_sentence.append(translated_letter)
+
+print(converted_sentence)
