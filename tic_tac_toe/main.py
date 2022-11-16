@@ -14,9 +14,33 @@ score = f" the score of your play is player 1 {player_1_score} : player 2 {playe
 
 
 """ Define moves of players"""
-
 player_1_all_moves = []
 player_2_all_moves = []
+
+
+def player_1_move():
+    p_1_move = int(input(f"\nPlease insert your move in format row column eg. (row 1 column 1 insert 11)  : "))
+    if p_1_move not in play_ground.keys():
+        print("Sorry your choice is not possible. Try again.")
+        p_1_move = int(input(f"\nPlease insert your move in format row column eg. (row 1 column 1 insert 11)  : "))
+    else:
+        pass
+    player_1_all_moves.append(p_1_move)
+    play_ground[p_1_move] = "_X_ "
+
+
+def player_2_move():
+    p_2_move = int(input(f"\nPlease insert your move in format row column eg. (row 1 column 1 insert 11)  : "))
+    if p_2_move not in play_ground.keys():
+        print("Sorry your choice is not possible. Try again.")
+        p_2_move = int(input(f"\nPlease insert your move in format row column eg. (row 1 column 1 insert 11)  : "))
+    else:
+        pass
+
+    player_2_all_moves.append(p_2_move)
+    play_ground[p_2_move] = "_O_ "
+
+
 
 """ Create play-ground """
 play_ground = {11: "___ ", 12: "___ ", 13: "___ ",
@@ -37,19 +61,17 @@ winner = False
 moves = 0
 print_ground()
 while not winner:
-    if moves < 9:
-        player_1_move = int(input(f"\nPlease insert your move in format row column eg. (row 1 column 1 insert 11)  : "))
-        player_1_all_moves.append(player_1_move)
-        play_ground[player_1_move] = "_X_ "
+    if moves <= 9:
+        player_1_move()
         moves += 1
 
         print_ground()
 
-        player_2_move = int(input(f"\nPlease insert your move in format row column eg. (row 1 column 1 insert 11)  : "))
-        player_2_all_moves.append(player_2_move)
-        play_ground[player_2_move] = "_O_ "
+        player_2_move()
         moves += 1
 
         print_ground()
+    else:
+        break
 
 
