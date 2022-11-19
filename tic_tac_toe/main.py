@@ -21,16 +21,6 @@ def intro():
     player_2 = input("Now you insert a name of the player 2: ")
     print(f"Your name is.... {player_2} .... and your symbol is ..... O ......")
 
-
-def playground():
-    playground = {11: "___ ", 12: "___ ", 13: "___ ",
-                  21: "___ ", 22: "___ ", 23: "___ ",
-                  31: "___ ", 32: "___ ", 33: "___ ",
-                  }
-    print_ground()
-
-
-
 def player_1_move():
     """ Define moves """
     global moves
