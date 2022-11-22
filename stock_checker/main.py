@@ -106,14 +106,14 @@ else:
 ## STEP 3: Use https://www.twilio.com
 # Send a seperate message with the percentage change and each article's title and description to your phone number.
 
-account_sid = 'AC37911a60213a19cddcebb088716cb2d2'
-auth_token = '9de1faa512d6e3bafa5cc059ac57622e'
+account_sid = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+auth_token = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 client = Client(account_sid, auth_token)
 
 message = client.messages.create(
     body=message,
     from=xxxxxxx,
-    to='+420723251655'
+    to='xxxxxxxx'
 )
 print(message.sid)
 

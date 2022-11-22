@@ -6,10 +6,10 @@ class NotificationManager:
 
     def send_sms(self, message):
 
-        account_sid = 'AC37911a60213a19cddcebb088716cb2d2'
-        auth_token = '9de1faa512d6e3bafa5cc059ac57622e'
+        account_sid = 
+        auth_token = 
         client = Client(account_sid, auth_token)
 
-        message = client.messages.create(body=message, from_= "+12137723903", to = '+420723251655')
+        message = client.messages.create(body=message, from_= "", to = '')
         print(message.sid)
 
