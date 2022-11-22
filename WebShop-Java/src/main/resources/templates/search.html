@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link th:href="@{/stylesheet.css}" href="stylesheet" rel="stylesheet" type="text/css">
+    <title>Search result</title>
+</head>
+<body>
+
+<h1>My Shop</h1>
+<h2>Searched Item</h2>
+
+<form action="/only-available" method="get" th:action="@{/only-available}">
+    <button> ONLY AVAILABLE</button>
+</form>
+<form action="/cheapest-first" th:action="@{/cheapest-first}">
+    <button> CHEAPEST FIRST</button>
+</form>
+<form action="/contains-nike" th:action="@{/contains-nike}">
+    <button> CONTAINS NIKE</button>
+</form>
+<form action="/average-stock" th:action="@{/average-stock}">
+    <button> AVERAGE STOCK</button>
+</form>
+<form action="/most-expensive" th:action="@{/most-expensive}">
+    <button> MOST EXPENSIVE AVAILABLE</button>
+</form>
+
+<h2>You searching this item?</h2>
+<h3 th:text="${item}"></h3>
+<table>
+    <thead> Name</thead>
+    <thead> Description</thead>
+    <thead> Price</thead>
+    <thead> Quantity of stock</thead>
+
+    <tbody>
+    <tr th:each="searchedItemList : ${SearchedItems}">
+        <td th:text="${searchedItemList.getName()}">name</td>
+        <td th:text="${searchedItemList.getDescription()}">description</td>
+        <td th:text="${searchedItemList.getPrice()}">price</td>
+        <td th:text="${searchedItemList.getQuantityOfStock()}">quantity</td>
+    </tr>
+    </tbody>
+
+</table>
+
+</body>
+</html>

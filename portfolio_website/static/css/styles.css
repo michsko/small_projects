@@ -1,11 +1,55 @@
-.navbar .navbar-brand {
-    color: #DA27D9;
-    font-family: 'Abril Fatface';
-    font-weight: 400;
-    font-size: 30px;
+.navbar {
+    background: #e54360;
 
 }
-.nav-item {
-font-family: 'Montserrat'
+
+.navbar .navbar-brand {
+    color: #ffb71b;
+    font-size: 1.7rem;
+    font-family: 'Abril Fatface';
+    font-weight: 900;
 }
+
+.collapse .navbar-collapse {
+   color: #e54360;
+}
+
+.container-fluid{
+    padding: 2% 10%
+}
+.nav-item {
+    font-family: ;
+}
+
+.play-title{
+    color: #e54360;
+    font-size: 2rem;
+    font-family: 'Montserrat';
+    font-weight: bold;
+}
+.play-caption {
+    color: #e54360;
+    font-size: 1.3rem;
+    font-family: 'Abril Fatface', bold;
+    font-weight: 300;
+}
+.program-title {
+
+    font-family: 'Montserrat';
+    font-weight: bold;
+    text-shadow: 0 0 2px #e54360, 0 0 2px #e54360, 0 0 2px #e54360, 0 0 2px #e54360;
+    color: white;
+    font-size: 3rem;
+    padding: 11% 11% 3% 11%;
+}
+.repertoar {
+    background: black;
+}
+
+.btn {
+    color: #e54360;
+    size: 1.3rem;
+    font-family: 'Abril Fatface';
+}
+
 

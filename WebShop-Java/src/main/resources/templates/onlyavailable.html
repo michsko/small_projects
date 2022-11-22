@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link th:href="@{/stylesheet.css}" href="stylesheet" rel="stylesheet" type="text/css">
+    <title>Only Available</title>
+</head>
+<body>
+
+<h1>My Shop</h1>
+<h2>Only available items</h2>
+
+<thead> Name</thead>
+<thead> Description</thead>
+<thead> Price</thead>
+<thead> Quantity of stock</thead>
+
+<form action="/cheapest-first" method="get" th:action="@{/cheapest-first}">
+    <button> CHEAPEST FIRST</button>
+</form>
+<form action="/contains-nike" method="get" th:action="@{/contains-nike}">
+    <button> CONTAINS NIKE</button>
+</form>
+<form action="/average-stock" method="get" th:action="@{/average-stock}">
+    <button> AVERAGE STOCK</button>
+</form>
+<form action="/most-expensive" method="get" th:action="@{/most-expensive}">
+    <button> MOST EXPENSIVE AVAILABLE</button>
+</form>
+
+
+</br>
+<table>
+
+    <thead> Name</thead>
+    <thead> Description</thead>
+    <thead> Price</thead>
+    <thead> Quantity of stock</thead>
+
+    <tbody>
+    <tr th:each="productsAvailable : ${listOfOnlyAvailable}">
+        <td th:text="${productsAvailable.getName()}">name</td>
+        <td th:text="${productsAvailable.getDescription()}">description</td>
+        <td th:text="${productsAvailable.getPrice()}">price</td>
+        <td th:text="${productsAvailable.getQuantityOfStock()}">quantity</td>
+    </tr>
+    </tbody>
+
+</table>
+
+</body>
+</html>
