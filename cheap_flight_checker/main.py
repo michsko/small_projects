@@ -47,3 +47,7 @@ for index in data_sheet["prices"]:
                             f"{flight_data.origin_city}-{flight_data.origin_airport} to " \
                             f"{flight_data.destination_city}-{flight_data.destination_airport}, from" \
                             f"{flight_data.out_date} to {flight_data.return_date}")
+                            
+                            
+                            
+                            

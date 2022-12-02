@@ -1,6 +1,6 @@
 import requests
 
-HEADER = {"Authorization": f"Bearer sdkfhskdhfksadkfsdkfhkj"}
+HEADER = {"Authorization": f""}
 PUT_URL = "https://api.sheety.co/357df803cdf8a30e2c5b639060f7bf96/flightDeals/users/"
 GET_URL = "https://api.sheety.co/357df803cdf8a30e2c5b639060f7bf96/flightDeals/users"
 
