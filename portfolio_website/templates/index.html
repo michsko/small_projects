@@ -1,74 +1,94 @@
 {% include 'header.html' %}
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3 shadow-5-strong" id="mainNav">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" class="color: #ffb71b;" href={{'/'}}>Filip Teller</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto my-2 my-lg-0">
 
-
-<!--<nav class="navbar sticky-top navbar-expand-lg">-->
-<!--    <div class="container-fluid">-->
-<!--        <a class="navbar-brand filip" href="#">Filip</a><a class="navbar-brand teller" href="#">Teller</a>-->
-<!--        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"-->
-<!--                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">-->
-<!--            <span class="navbar-toggler-icon"></span>-->
-<!--        </button>-->
-<!--        <div class="collapse navbar-collapse" id="navbarNav">-->
-<!--            <ul class="navbar-nav ms-auto">-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link active" aria-current="page" href="#">home</a>-->
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link" href="#">program</a>-->
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link" href="#">repertoár</a>-->
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link" href="#">bio</a>-->
-<!--                </li>-->
-
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link" href="#">kontakt</a>-->
-<!--                </li>-->
-<!--            </ul>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</nav>-->
-
-
+                <li class="nav-item"><a class="nav-link" href={{'/herec'}}>Herec</a></li>
+                <li class="nav-item"><a class="nav-link" href={{'/moderator'}}>Moderátor</a></li>
+                <li class="nav-item"><a class="nav-link" href={{'/standup'}}>Stand UP</a></li>
+                <li class="nav-item"><a class="nav-link" href={{'/kontakt'}}>Kontakt</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<br>
+<br>
+<br>
+<br>
 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active" data-bs-interval="5000">
-            <img src="static/images/.xdp-mozna-ze-to-znate_copy.jpg-mWNFOd" class="d-block w-100" alt="...">
+            <img src="static/images/index_page/IMG_1982.JPG" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-               <button class="button-74" role="button">zjistit více</button>
+                <a href={{'/fotogalery'}}>
+                    <button type="button" class="btn btn-outline-secondary">vidět více</button>
+
+                </a>
             </div>
 
         </div>
         <div class="carousel-item" data-bs-interval="5000">
-            <img src="static/images/.xdp-plakát-reprodukce-banner_copy.jpg-YiZCfK" class="d-block w-100" alt="...">
+            <img src="static/images/index_page/IMG_2017.JPG" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-                <button class="button-74" role="button">zjistit více</button>
+                <a href={{'/fotogalery'}}>
+                    <button type="button" class="btn btn-outline-secondary">vidět více</button>
+                </a>
             </div>
 
         </div>
         <div class="carousel-item" data-bs-interval="5000">
-            <img src="static/images/.xdp-Stand-Up-Down_copy.jpg-qn1T7q" class="d-block w-100" alt="...">
+            <img src="static/images/index_page/IMG_2046.JPG" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-               <button class="button-74" role="button">zjistit více</button>
-            </div>
+                <a href={{'/fotogalery'}}>
+                    <button type="button" class="btn btn-outline-secondary">vidět více</button>
+                </a></div>
         </div>
         <div class="carousel-item" data-bs-interval="5000">
-            <img src="static/images/.xdp-boxer_copy.jpg-BbijBB" class="d-block w-100" alt="...">
+            <img src="static/images/index_page/IMG_2050.JPG" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-                <button class="button-74" role="button">zjistit více</button>
+                <a href={{'/fotogalery'}}>
+                    <button type="button" class="btn btn-outline-secondary">vidět více</button>
+                </a></div>
+
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+            <img src="static/images/index_page/IMG_2175.JPG" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <a href={{'/fotogalery'}}>
+                    <button type="button" class="btn btn-outline-secondary">vidět více</button>
+                </a>
             </div>
 
         </div>
         <div class="carousel-item" data-bs-interval="5000">
-            <img src="static/images/.xdp-cech-a-cobol_copy.jpg-GmJy4s" class="d-block w-100" alt="...">
+            <img src="static/images/index_page/IMG_2176.JPG" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-                <button class="button-74" role="button">zjistit více</button>
-            </div>
+                <a href={{'/fotogalery'}}>
+                    <button type="button" class="btn btn-outline-secondary">vidět více</button>
+                </a></div>
 
         </div>
+        <div class="carousel-item" data-bs-interval="5000">
+            <img src="static/images/index_page/IMG_2209.JPG" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <a href={{'/fotogalery'}}>
+                    <button type="button" class="btn btn-outline-secondary">vidět více</button>
+                </a></div>
 
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+            <img src="static/images/index_page/IMG_2255.JPG" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <a href={{'/fotogalery'}}>
+                    <button type="button" class="btn btn-outline-secondary">vidět více</button>
+                </a></div>
+
+        </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -89,43 +109,108 @@
     </div>
     <div class="row">
         <div class="col">
-           <button class="button-74" role="button">zobrazit vše</button>
+            <a href={{'/program'}}>
+                <button type="button" class="btn btn-outline-secondary">zjistit více</button>
+            </a>
         </div>
     </div>
 </div>
-<div class="container-fluid text-center repertoar">
+
+<div class="container-fluid text-center animated rubberBand repertoar">
     <div class="row">
-        <div class="col">
-            <h1 class="program-title">KONTAKT</h1>
+        <div class="col-sm">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/3lzyqtIvuMs"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/6OGtOCmc9Oc"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="col-sm">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ZwKLmGsx-lw"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="col-sm">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wwowrj5B3gk"
+                        allowfullscreen></iframe>
+            </div>
         </div>
     </div>
-    <!--    <ul class="wrapper">-->
-    <!--        <li class="icon facebook">-->
-    <!--            <span class="tooltip">Facebook</span>-->
-    <!--            <span><i class="fab fa-facebook-f"></i></span>-->
-    <!--        </li>-->
-    <!--        <li class="icon twitter">-->
-    <!--            <span class="tooltip">Twitter</span>-->
-    <!--            <span><i class="fab fa-twitter"></i></span>-->
-    <!--        </li>-->
-    <!--        <li class="icon instagram">-->
-    <!--            <span class="tooltip">Instagram</span>-->
-    <!--            <span><i class="fab fa-instagram"></i></span>-->
-    <!--        </li>-->
-    <!--        <li class="icon github">-->
-    <!--            <span class="tooltip">Github</span>-->
-    <!--            <span><i class="fab fa-github"></i></span>-->
-    <!--        </li>-->
-    <!--        <li class="icon youtube">-->
-    <!--            <span class="tooltip">Youtube</span>-->
-    <!--            <span><i class="fab fa-youtube"></i></span>-->
-    <!--        </li>-->
-    <!--    </ul>-->
+
     <div class="row">
-        <div class="col">
-           <button class="button-74" role="button">zobrazit vše</button>
+        <div class="col-sm">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/RCJMisWMVcA"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="col-sm">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/6ZG0qC_whMs"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="col-sm">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/iWjQo_77pgc"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="col-sm">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/fa3m5b3l2m4"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+
+
+        <div class="container-fluid text-center animated rubberBand kontakt">
+            <h1 class="program-title">KONTAKT</h1>
+            <div class="row">
+                <div class="col-sm">
+                    <h2>MANAGEMENT</h2>
+                    <h3>filip.teller@gmail.com</h3>
+                    <h3>+420 723 839 753</h3>
+                </div>
+                <div class="col-sm">
+                    <h2>AGENCY</h2>
+                    <h3>Alexandra Balaštíková</h3>
+                    <h3>alexandra@actory.cz</h3>
+                    <h3>+420 776 052 649</h3>
+                </div>
+                <div class="col-sm">
+                    <h2>ONLINE</h2>
+                    <h3>actory.cz</h3>
+                    <h3>xxxxxxx</h3>
+                    <a href="https://www.facebook.com/TellerFilip/" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-google"></a>
+                    <a href="https://www.instagram.com/filipteller/?hl=cs" class="fa fa-instagram"></a>
+                    <a href="https://www.youtube.com/@filipteller2058/videos" class="fa fa-youtube"></a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <a href={{'/kontakt'}}>
+                        <button type="button" class="btn btn-outline-secondary">zjistit více</button>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 {% include 'footer.html' %}
+

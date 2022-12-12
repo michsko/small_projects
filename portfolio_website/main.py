@@ -1,19 +1,34 @@
 from flask import Flask, render_template
-app = Flask("__name__")
+
+
+app = Flask(__name__)
 
 
 @app.route("/")
 def index():
     return render_template("index.html")
 
+
+@app.route("/herec")
+def herec():
+    return render_template("herec.html")
+
+@app.route("/moderator")
+def moderator():
+    return render_template("moderator.html")
+
+@app.route("/standup")
+def standup():
+    return render_template("standup.html")
+
 @app.route("/program")
 def program():
     return render_template("program.html")
 
 
-@app.route("/repertoire")
+@app.route("/fotogalery")
 def repertoire():
-    return render_template("repertoire.html")
+    return render_template("fotogalery.html")
 
 @app.route("/bio")
 def bio():

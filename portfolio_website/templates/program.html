@@ -1,62 +1,280 @@
 {% include 'header.html' %}
 
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3 shadow-5-strong" id="mainNav">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" style="color: #ffb71b;" href={{'/'}}>Filip Teller</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto my-2 my-lg-0">
 
-<body>
-<div class="table-responsive">
-  <table class="table table-striped text-successtable-border border-light">
-    <thead class="border-light">
-    <br>
-    <br>
-    <br>
-    <br>
-      <tr>
+                <li class="nav-item"><a class="nav-link" href={{'/herec'}}>Herec</a></li>
+                <li class="nav-item"><a class="nav-link" href={{'/moderator'}}>Moderátor</a></li>
+                <li class="nav-item"><a class="nav-link" href={{'/standup'}}>Stand UP</a></li>
+                <li class="nav-item"><a class="nav-link" href={{'/kontakt'}}>Kontakt</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-        <th scope="col"><strong>Datum</strong></th>
-        <th scope="col"><strong>Představení</strong></th>
-        <th scope="col"><strong>Info</strong></th>
-        <th scope="col"><strong>koupit vstupenku</strong></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row" class="datum">Datum</th>
-        <td class="predstaveni">Představení</td>
-        <td class="info">Info</td>
-        <td> <button class="button-74" role="button">koupit vstupenku</button></td>
-      </tr>
-      <tr>
-        <th scope="row" class="datum">Datum</th>
-        <td class="predstaveni">Představení</td>
-        <td class="info">Info</td>
-        <td> <button class="button-74" role="button">koupit vstupenku</button></td>
-      </tr>
-      <tr>
-        <th scope="row" class="datum">Datum</th>
-        <td class="predstaveni">Představení</td>
-        <td class="info">Info</td>
-        <td> <button class="button-74" role="button">koupit vstupenku</button></td>
-      </tr>
-      <tr>
-        <th scope="row" class="datum">Datum</th>
-        <td class="predstaveni">Představení</td>
-        <td class="info">Info</td>
-        <td> <button class="button-74" role="button">koupit vstupenku</button></td>
-      </tr>
-       <tr>
-        <th scope="row" class="datum">Datum</th>
-        <td class="predstaveni">Představení</td>
-        <td class="info">Info</td>
-        <td> <button class="button-74" role="button">koupit vstupenku</button></td>
-      </tr>
-      <tr>
-        <th scope="row" class="datum">Datum</th>
-        <td class="predstaveni">Představení</td>
-        <td class="info">Info</td>
-        <td> <button class="button-74" role="button">koupit vstupenku</button></td>
-      </tr>
-    </tbody>
-  </table>
+
+<div class="all" style="background: #111006;">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container" style="background-color: #e9a615; padding: 20px;">
+        <div class="row" style="background-color: #ffb71b; padding: 15px">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <ul class="list-inline">
+                    <h2>
+                        <li>11</li>
+                    </h2>
+                    <h2>
+                        <li>SRP</li>
+                    </h2>
+                </ul>
+            </div>
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <h3 class="text-uppercase"><strong>Možná, že to znáte...</strong></h3>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Pondělí
+                    </li>
+                    <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 19:30 - 21:00
+                    </li>
+                    <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> DKO
+                        Znojmo
+                    </li>
+                </ul>
+                <p>Hudební stand up comedy show o záležitostech všedních dní.</p>
+            </div>
+            <div class="col-lg-4 mb-4 mb-lg-0">
+
+                <button type="button" class="btn btn-lg pull-right" style="background: #e9a615;">vstupenky</button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="calendar container" style="background-color: #e9a615; padding: 20px">
+        <div class="row" style="background-color: #ffb71b; padding: 15px">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <ul class="list-inline">
+                    <h2>
+                        <li>27</li>
+                    </h2>
+                    <h2>
+                        <li>ZÁŘ</li>
+                    </h2>
+                </ul>
+            </div>
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <h3 class="text-uppercase"><strong>Cikánský Boxer</strong></h3>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Úterý</li>
+                    <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 19:30 - 21:00</li>
+                    <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> DKO Znojmo
+                    </li>
+                </ul>
+                <p>Monodrama o bývalém boxerovi, jemuž se vzpomínka dere do srdce.</p>
+            </div>
+               <div class="col-lg-4 mb-4 mb-lg-0">
+                <button type="button" class="btn btn-lg pull-right" style="background: #e9a615;">vstupenky</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="calendar container" style="background-color: #e9a615; padding: 20px;">
+        <div class="row" style="background-color: #ffb71b; padding: 15px">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <ul class="list-inline">
+                    <h2>
+                        <li>14</li>
+                    </h2>
+                    <h2>
+                        <li>ŘÍJ</li>
+                    </h2>
+                </ul>
+            </div>
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <h3 class="text-uppercase"><strong>ČECHÁČCI A ČOBOLÁCI</strong></h3>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Středa</li>
+                    <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 19:30 - 21:00</li>
+                    <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> DKO Jihlava
+                    </li>
+                </ul>
+                <p>Celovečerní stand up o česko-slovenských vztazích.</p>
+            </div>
+               <div class="col-lg-4 mb-4 mb-lg-0">
+                <button type="button" class="btn btn-lg pull-right" style="background: #e9a615;">vstupenky</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="calendar container" style="background-color: #e9a615;; padding: 20px;">
+        <div class="row" style="background-color: #ffb71b; padding: 15px">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <ul class="list-inline">
+                    <h2>
+                        <li>02</li>
+                    </h2>
+                    <h2>
+                        <li>LIS</li>
+                    </h2>
+                </ul>
+            </div>
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <h3 class="text-uppercase"><strong>Reprodukce</strong></h3>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Čtvrtek</li>
+                    <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 19:30 - 21:00</li>
+                    <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> ZUS Lužánky
+                    </li>
+                </ul>
+                <p>Stand up Filipa Tellera o rozhodnutí, které nelze vzít zpět</p>
+            </div>
+               <div class="col-lg-4 mb-4 mb-lg-0">
+                <button type="button" class="btn btn-lg pull-right" style="background: #e9a615;">vstupenky</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="calendar container" style="background-color: #e9a615;; padding: 20px;">
+        <div class="row" style="background-color: #ffb71b; padding: 15px">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <ul class="list-inline">
+                    <h2>
+                        <li>14</li>
+                    </h2>
+                    <h2>
+                        <li>PRO</li>
+                    </h2>
+                </ul>
+            </div>
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <h3 class="text-uppercase"><strong>Komedie o komikovi</strong></h3>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Pátek</li>
+                    <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 19:30 - 21:00
+                    </li>
+                    <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> Kino
+                        Brigáda,
+                        Bučovice
+                    </li>
+                </ul>
+                <p>Komik je ve formě, ale konec jeho kariéry se blíží.</p>
+            </div>
+               <div class="col-lg-4 mb-4 mb-lg-0">
+                <button type="button" class="btn btn-lg pull-right" style="background: #e9a615;">vstupenky</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="calendar container" style="background-color: #e9a615;; padding: 20px;">
+        <div class="row" style="background-color: #ffb71b; padding: 15px">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <ul class="list-inline">
+                    <h2>
+                        <li>27</li>
+                    </h2>
+                    <h2>
+                        <li>LED</li>
+                    </h2>
+                </ul>
+            </div>
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <h3 class="text-uppercase"><strong>Komedie o komikovi</strong></h3>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Sobota
+                    </li>
+                    <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 19:30 -
+                        21:00
+                    </li>
+                    <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> KD,
+                        Kunčina Ves
+                    </li>
+                </ul>
+                <p>Komik je ve formě, ale konec jeho kariéry se blíží.</p>
+            </div>
+               <div class="col-lg-4 mb-4 mb-lg-0">
+                <button type="button" class="btn btn-lg pull-right" style="background: #e9a615;">vstupenky</button>
+            </div>
+        </div>
+    </div>
 </div>
-</body>
 
-{include 'footer.html'}
+<!--<body>-->
+<!--<div class="table-responsive">-->
+<!--  <table class="table table-striped text-successtable-border border-light">-->
+<!--    <thead class="border-light">-->
+<!--    <br>-->
+<!--    <br>-->
+<!--    <br>-->
+<!--    <br>-->
+<!--      <tr>-->
+<!--        <th scope="col"><strong>Datum</strong></th>-->
+<!--        <th scope="col"><strong>Představení</strong></th>-->
+<!--        <th scope="col"><strong>Info</strong></th>-->
+<!--        <th scope="col"><strong>vstupenky</strong></th>-->
+<!--      </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--      <tr>-->
+<!--        <th scope="row" class="datum">11.prosinec </th>-->
+<!--        <td class="p#e9a615staveni">Představení</td>-->
+
+<!--        <td class="info">Info</td>-->
+<!--        <td> <button type="button" class="btn btn-secondary">vstupenky</button>-->
+<!--</td>-->
+
+<!--      </tr>-->
+<!--      <tr>-->
+<!--        <th scope="row" class="datum">12.prosinec</th>-->
+<!--        <td class="p#e9a615staveni">Představení</td>-->
+<!--        <td class="info">Info</td>-->
+<!--        <td> <button type="button" class="btn btn-secondary">vstupenky</button>-->
+<!--</td>-->
+
+<!--      </tr>-->
+<!--      <tr>-->
+<!--        <th scope="row" class="datum">13.prosinec</th>-->
+<!--        <td class="p#e9a615staveni">Představení</td>-->
+<!--        <td class="info">Info</td>-->
+<!--        <td> <button type="button" class="btn btn-secondary">vstupenky</button>-->
+<!--</td>-->
+
+<!--      </tr>-->
+<!--      <tr>-->
+<!--        <th scope="row" class="datum">14.prosinec</th>-->
+<!--        <td class="p#e9a615staveni">Představení</td>-->
+<!--        <td class="info">Info</td>-->
+<!--         <td> <button type="button" class="btn btn-secondary">vstupenky</button>-->
+<!--</td>-->
+
+<!--      </tr>-->
+<!--       <tr>-->
+<!--        <th scope="row" class="datum">15.prosinec</th>-->
+<!--        <td class="p#e9a615staveni">Představení</td>-->
+<!--        <td class="info">Info</td>-->
+<!--        <td> <button type="button" class="btn btn-secondary">vstupenky</button>-->
+<!--</td>-->
+
+<!--      </tr>-->
+<!--      <tr>-->
+<!--        <th scope="row" class="datum">16.prosinec</th>-->
+<!--        <td class="p#e9a615staveni">Představení</td>-->
+<!--        <td class="info">Info</td>-->
+<!--        <td> <button type="button" class="btn btn-secondary">Secondary</button>-->
+<!--</td>-->
+<!--      </tr>-->
+<!--    </tbody>-->
+<!--  </table>-->
+<!--</div>-->
+<!--</body>-->
+
+{% include 'footer.html'%}
