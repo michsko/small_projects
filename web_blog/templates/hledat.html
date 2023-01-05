@@ -1,0 +1,19 @@
+{% include 'header.html' %}
+{% include 'navbar.html' %}
+
+<div class="container-md content">
+    <div class="col-12">
+
+        <div class="input-group">
+            <form method="POST" action="{{url_for('search')}}">
+                {{form.hidden_tag()}}
+                <input type="search" class="form-control rounded" placeholder="Jméno Příjmení" aria-label="Search"
+                       aria-describedby="search-addon"/>
+                <button type="button" class="btn btn-outline-primary">search</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% include 'footer.html' %}

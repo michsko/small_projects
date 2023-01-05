@@ -1,0 +1,113 @@
+<!-- Navbar -->
+<div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-3">
+        <h4 class="text-white"><a class="nav-link active" href="{{url_for('about')}}">About</a></h4>
+        <h4 class="text-white"><a class="nav-link active" href="{{url_for('blogs')}}">Blogy</a></h4>
+        <h4 class="text-white"><a class="nav-link active" href="{{url_for('forum')}}">Forum</a></h4>
+        <h4 class="text-white"><a class="nav-link active" href="{{url_for('search')}}">Hledat</a></h4>
+        <h4 class="text-white"><a class="nav-link active" href="{{url_for('news')}}">Zpravy</a></h4>
+
+    </div>
+</div>
+<nav class="navbar navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    {% if current_user.is_authenticated %}
+
+    <div class="d-flex align-items-center">
+
+        <ul class="navbar-right">
+            <li>
+                <a href="#">CESKY</a>
+            </li>
+            <li>
+                <a href="#">ENGLISH</a>
+            </li>
+        </ul>
+        <a
+                class="btn btn-dark px-3"
+                href="#"
+                role="button"
+        ><i class="bi bi-instagram"></i
+        ></a>
+        <a
+                class="btn btn-dark px-3"
+                href="#"
+                role="button"
+        ><i class="bi bi-facebook"></i
+        ></a>
+        <a
+                class="btn btn-dark px-3"
+                href="#"
+                role="button"
+        ><i class="bi bi-youtube"></i
+        ></a>
+         <a
+                class="btn btn-dark px-3"
+                href="#"
+                role="button"
+        ><i class="bi bi-twitter"></i
+        ></a>
+        <a class="btn btn-primary me-3" href="{{url_for('logout')}}" role="button">
+            Logout
+        </a>
+
+        {% else %}
+        <div class="d-flex align-items-center">
+            <ul class="navbar-right px-3">
+                <li>
+                    <a href="#">CESKY</a>
+                </li>
+                <li>
+                    <a href="#">ENGLISH</a>
+                </li>
+            </ul>
+            <a
+                    class="btn btn-dark px-3"
+                    href="#"
+                    role="button"
+            ><i class="bi bi-instagram"></i
+            ></a>
+            <a
+                    class="btn btn-dark px-3"
+                    href="#"
+                    role="button"
+            ><i class="bi bi-facebook"></i
+            ></a>
+            <a
+                    class="btn btn-dark px-3"
+                    href="#"
+                    role="button"
+            ><i class="bi bi-youtube"></i
+            ></a>
+            <a
+                class="btn btn-dark px-3"
+                href="#"
+                role="button"
+        ><i class="bi bi-twitter"></i
+        ></a>
+
+            <a class="btn btn-primary me-3" href="{{url_for('login')}}" role="button">
+                Login
+            </a>
+
+            <a class="btn btn-primary me-3" href="{{url_for('register')}}" role="button">
+                Sign up
+            </a>
+        </div>
+        {% endif %}
+</nav>
+<div>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand-center" style="color: white;">Cirkus Cafe</a>
+        <div class="d-flex  align-items-center navbar">
+            <ul class="navbar-left">
+                <li>{{ date.strftime('%B %d, %Y') }}</li>
+                <li>30°C,London</li>
+            </ul>
+            <div>
+    </nav>
+</div>

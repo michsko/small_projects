@@ -1,0 +1,176 @@
+{% include "header.html" %}
+{% include "navbar.html" %}
+
+{% if current_user.is_authenticated %}
+
+<div class="container-md emp-profile register-form">
+    {% for message in get_flashed_messages() %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert"
+            aria-label="Close"></button>
+</div>
+{% endfor %}
+    <div class="col-12">
+        <form action="/dashboard" method="post" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="profile-img">
+                        {% if current_user.filename_pic %}
+
+                        <img src="{{ url_for('static', filename= 'images/' + 'current_user.filename_pic' ) }}"
+                             alt=""/>
+                        {% else %}
+                        <img src="{{ url_for('static', filename= 'images/profile/profile_pic.png') }}"
+                             alt=""/>
+
+                        {% endif %}
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="profile-head">
+                        <h5>
+                            {{ current_user.username }}
+                        </h5>
+                        <h6>
+                            {{ current_user.occupation }}
+                        </h6>
+                       <p class="proile-rating">RANKINGS : <span>8/10</span></p>
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                   aria-controls="home" aria-selected="true">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                                   aria-controls="profile" aria-selected="false">xxxxxxx</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <a href="{{url_for('update_user', id=current_user.id) }}" class="btn btn-warning btn-md ms-2">
+                        Edit Profile</a>
+                    <br/><br/>
+                    <a href="{{url_for('upload_profile_pic', id=current_user.id) }}" class="btn btn-warning btn-md ms-2">
+                        Edit Photo</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="profile-work">
+                        <p>Tools</p>
+                        <a href="">xxxxxxxxx</a><br/>
+                        <a href="">xxxxxxxxx</a><br/>
+                        <a href="">xxxxxxxxx</a>
+                        <p>Prefered</p>
+                        <a href="">xxxxxxxxx</a><br/>
+                        <a href="">xxxxxxxxx</a><br/>
+                        <a href="">xxxxxxxxx</a><br/>
+                        <a href="">xxxxxxxxx</a><br/>
+                        <a href="">xxxxxxxxx</a><br/>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="tab-content profile-tab" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>User Id</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>{{ current_user.id }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Name</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p> {{ current_user.name }} {{ current_user.surname }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Email</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p> {{ current_user.email }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Phone</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p> {{ current_user.phone_number}}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Profession</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p> {{ current_user.occupation }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Experience</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>Expert</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Hourly Rate</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>10$/hr</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Total Projects</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>230</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>English Level</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>Expert</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Availability</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>6 months</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Your Bio</label><br/>
+                                    <p>Your detail description</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+  
+</div>
+{% endif %}
+{% include 'footer.html' %}

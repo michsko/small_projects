@@ -1,0 +1,64 @@
+{% include "header.html" %}
+{% include "navbar.html" %}
+
+{% if current_user.is_authenticated %}
+
+<div class="container-md emp-profile register-form">
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                aria-label="Close"></button>
+    </div>
+    {% endfor %}
+    <div class="col-12">
+        <br/><br/><br/><br/><br/><br/><br/><br/>
+        <form action="upload_profile_pic" enctype="multipart/form-data" method="post">
+
+            <div class="row">
+                <div class="col-md-4">
+                    <br/><br/>
+                    <div class="profile-img">
+
+                        <img src="{{ url_for('static', filename= 'images/profile/profile_pic.png') }}"
+                             alt=""/>
+
+                    </div>
+                </div>
+                <br/><br/>
+                <div class="col-md-6">
+                    <div class="profile-head">
+                        <h5>
+                            {{ current_user.username }}
+                        </h5>
+                        <h6>
+                            {{ current_user.occupation }}
+                        </h6>
+<!--                        <br/><br/><br/><br/>-->
+<!--                        {{ form.picture.label(class="form-label") }}-->
+<!--                        {{ form.picture(class="form-control form-control-lg") }}-->
+<!--                        <br/><br/>-->
+<!--                        {{ form.name.label(class="form-label") }}-->
+<!--                        {{ form.name(class="form-control form-control-lg") }}-->
+<!--                        -->
+                        <input type="file" name="file">
+                        <br/><br/>
+                         <div class="d-flex justify-content-end pt-3">
+<!--                    {{ form.submit(class="btn btn-warning btn-md ms-2") }}-->
+<!--                </div>-->
+                             <button>Submit</button>
+                        <br/><br/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+
+{% endif %}
+{% include 'footer.html' %}

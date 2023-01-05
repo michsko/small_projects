@@ -1,0 +1,194 @@
+{% include 'header.html' %}
+{% include 'navbar.html' %}
+<br/><br/><br/>
+<div class="container-md register-form">
+    <div class="col-12">
+        <section class="h-100 bg-dark">
+            <div class="container py-5 h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col">
+                        <div class="card card-registration my-4">
+                            <div class="row g-0">
+                                <div class="col-xl-6 d-none d-xl-block">
+                                    <img src="static/images/Czech_Republic.png"
+                                         alt="Sample photo" class="img-fluid"
+                                         style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;"/>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="card-body p-md-5 text-black">
+                                        <h3 class="mb-5 text-uppercase">Update user informations</h3>
+                                        <form method="post">
+                                            {% for message in get_flashed_messages() %}
+                                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                                {{ message }}
+                                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                        aria-label="Close"></button>
+                                            </div>
+                                            {% endfor %}
+
+                                            {% if id == current_user.id %}
+
+                                            {{ update_form.hidden_tag() }}
+                                            <div class="row">
+                                                <div class="col-md-6 mb-4">
+                                                    <div class="form-outline">
+                                                        {{ update_form.username(class="form-control form-control-lg") }}
+                                                        {{ update_form.username.label(class="form-label") }}
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mb-4">
+                                                    <div class="form-outline">
+                                                        {{ update_form.name(class="form-control form-control-lg")
+                                                        }}
+                                                        {{ update_form.name.label(class="form-label") }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-4">
+                                                    <div class="form-outline">
+                                                        {{ update_form.surname(class="form-control
+                                                        form-control-lg") }}
+                                                        {{ update_form.surname.label(class="form-label") }}
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mb-4">
+                                                    <div class="form-outline">
+                                                        {{ update_form.phone_number(class="form-control
+                                                        form-control-lg"
+                                                        , placeholder="+xxx xxxxxxxxx") }}
+                                                        {{ update_form.phone_number.label(class="form-label") }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-4">
+                                                    <div class="form-outline">
+                                                        {{ update_form.gender(class="form-control") }}
+                                                        {{ update_form.gender.label(class="form-label") }}
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mb-4">
+                                                    <div class="form-outline">
+                                                        {{ update_form.occupation(class="form-control form-control-lg")
+                                                        }}
+                                                        {{ update_form.occupation.label(class="form-label") }}
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="form-outline mb-4">
+                                                        <div class="form-outline">
+                                                            {{ update_form.email(class="form-control
+                                                            form-control-lg") }}
+                                                            {{ update_form.email.label(class="form-label") }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="form-outline mb-4">
+                                                        {{ update_form.street_address(class="form-control
+                                                        form-control-lg") }}
+                                                        {{
+                                                        update_form.street_address.label(class="form-label")
+                                                        }}
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6 mb-4">
+                                                        <div class="form-outline">
+                                                            {{
+                                                            update_form.house_number(class="form-control
+                                                            form-control-lg") }}
+                                                            {{
+                                                            update_form.house_number.label(class="form-label")
+                                                            }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6 mb-4">
+                                                        <div class="form-outline">
+                                                            {{ update_form.city(class="form-control
+                                                            form-control-lg") }}
+                                                            {{ update_form.city.label(class="form-label")
+                                                            }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 mb-4">
+                                                        <div class="form-outline">
+                                                            {{ update_form.zip_code(class="form-control
+                                                            form-control-lg") }}
+                                                            {{
+                                                            update_form.zip_code.label(class="form-label")
+                                                            }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="row">
+                                                    <div class="col-md-6 mb-4">
+                                                        {{ update_form.state(class="form-control
+                                                        form-control-lg") }}
+                                                        {{ update_form.state.label(class="form-label") }}
+                                                    </div>
+                                                    <div class="col-md-6 mb-4">
+                                                        <div class="form-outline">
+                                                            {{ update_form.state2(class="form-control
+                                                            form-control-lg") }}
+                                                            {{
+                                                            update_form.state2.label(class="form-label")
+                                                            }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-outline mb-4">
+                                                    <div class="form-outline">
+                                                        {{ update_form.password(class="form-control
+                                                        form-control-lg") }}
+                                                        {{ update_form.password.label(class="form-label")
+                                                        }}
+                                                    </div>
+                                                    <div class="form-outline mb-4">
+                                                        <div class="form-outline">
+                                                            {{ update_form.password2(class="form-control
+                                                            form-control-lg") }}
+                                                            {{
+                                                            update_form.password2.label(class="form-label")
+                                                            }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        {{ update_form.terms_agreement(class="form-check-input") }}
+                                                        {{
+                                                        update_form.terms_agreement.label(class="form-label")
+                                                        }}
+                                                        <div class="d-flex justify-content-end pt-3">
+                                                            {{ update_form.submit(class="btn btn-warning btn-lg ms-2")
+                                                            }}
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+{% else %}
+
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    Nejste opravneni menit tyto informace!
+    <button type="button" class="btn-close" data-bs-dismiss="alert"
+            aria-label="Close"></button>
+</div>
+{% endif %}
+{% include 'footer.html' %}
