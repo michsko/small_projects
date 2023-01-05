@@ -1,0 +1,33 @@
+{% extends 'events/base.html' %}
+
+{% block content %}
+
+<center>
+<h1> Hello World!!!! And also Hello, {{ name }} !! </h1>
+
+<h2> Your Event starts on: 10th of {{ month }} in {{ year }}</h2>
+
+{{ month_number }}
+<br/>
+<br/>
+
+{{ cal|safe }}
+
+
+<br/>
+<br/>
+<h3> Now is : {{ time }}
+
+<br/>
+<br/>
+
+<br/>
+<br/>
+COPYRIGHT © {{ current_year }}
+
+
+
+</center>
+
+
+{%  endblock %}
