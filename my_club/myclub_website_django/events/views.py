@@ -4,7 +4,7 @@ from calendar import HTMLCalendar
 from datetime import datetime
 from django.http import HttpResponseRedirect
 from .models import Event, Venue
-from .forms import VenueForm 
+from .forms import VenueForm, EventForm 
 
 # Create your views here.
 
@@ -27,11 +27,32 @@ def add_venue(request):
 		})
 
 
-def event_list(request):
-	event_list = Event.objects.all()
 
-	return render(request, 'events/event_list.html', {
-		"event_list": event_list, 
+def add_event(request):
+	submitted = False
+	if request.method == "POST":
+		form = EventForm(request.POST)
+		if form.is_valid():
+			form.save()
+			return HttpResponseRedirect("/add_event?submitted=True")
+	else: 
+		form = EventForm
+		if "submitted" in request.GET:
+			submitted = True
+
+	return render(request, 'events/add_event.html',{
+		'form': form,
+		'submitted': submitted
+		})
+
+
+
+
+def events(request):
+	events = Event.objects.all()
+
+	return render(request, 'events/events.html', {
+		"events": events, 
 		})
 
 
@@ -88,13 +109,33 @@ def search_venues(request):
 		return render(request, "events/search_venues.html",{})
 
 
+def show_event(request, event_id):
+	event = Event.objects.get(pk=event_id)
+
+	return render(request, "events/show_event.html",{
+		'event': event
+		})
+
+
 def show_venue(request, venue_id):
 	venue = Venue.objects.get(pk=venue_id)
-	
+
 	return render(request,"events/show_venue.html",{
 		'venue': venue, 
 		})
 
+
+def update_event(request, event_id):
+	event = Event.objects.get(pk=event_id)
+	form = EventForm(request.POST or None, instance=event)
+	if form.is_valid():
+		form.save()
+		return redirect('events')
+
+	return render(request,"events/update_event.html",{
+		'event': event,
+		'form': form,
+		})
 
 
 def update_venue(request, venue_id):

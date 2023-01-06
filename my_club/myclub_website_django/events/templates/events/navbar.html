@@ -10,13 +10,16 @@
           <a class="nav-link" href="{% url 'home' '2023' 'February' %}">February</a>
         </li>
          <li class="nav-item">
-          <a class="nav-link" href="{% url 'event_list' %}">Events</a>
+          <a class="nav-link" href="{% url 'events' %}">Events</a>
         </li>
           <li class="nav-item">
           <a class="nav-link" href="{% url 'add_venue' %}">Add Venue</a>
         </li>
           <li class="nav-item">
           <a class="nav-link" href="{% url 'venues' %}">Venues</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="{% url 'add_event' %}">Add Event</a>
         </li>
       </ul>
       <form class="d-flex" role="search" method=POST action="{% url 'search_venues' %}">
