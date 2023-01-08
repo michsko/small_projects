@@ -18,6 +18,15 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('events.urls'))
+    path('', include('events.urls')),
+    path('members/', include('django.contrib.auth.urls')),
+    path('members/', include('members.urls')),
     
 ]
+
+
+# config admin 
+
+admin.site.site_header = "My club administration"
+admin.site.site_title = "My club"
+admin.site.index_title = "Welcome"

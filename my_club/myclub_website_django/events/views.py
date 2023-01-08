@@ -5,6 +5,15 @@ from datetime import datetime
 from django.http import HttpResponseRedirect
 from .models import Event, Venue
 from .forms import VenueForm, EventForm 
+from django.http import HttpResponse
+import csv
+from django.http import FileResponse
+import io
+from reportlab.pdfgen import canvas
+from reportlab.lib.units import inch
+from reportlab.lib.pagesizes import letter
+
+
 
 # Create your views here.
 
@@ -47,9 +56,21 @@ def add_event(request):
 
 
 
+def delete_event(request, event_id):
+	event = Event.objects.get(pk=event_id)
+	event.delete()
+	
+	return redirect('events')
+
+def delete_venue(request, venue_id):
+	venue = Venue.objects.get(pk=venue_id)
+	venue.delete()
+
+	return redirect('venues')
+
 
 def events(request):
-	events = Event.objects.all()
+	events = Event.objects.all().order_by('event_date')
 
 	return render(request, 'events/events.html', {
 		"events": events, 
@@ -88,11 +109,76 @@ def home(request, year=datetime.now().year, month=datetime.now().strftime('%B'))
 
 
 def venues(request):
-	venue_list = Venue.objects.all()
+	venue_list = Venue.objects.all().order_by('name')
 
 	return render(request, 'events/venues.html',{
 		'venue_list': venue_list,
 		})
+
+def venue_text(request):
+	response = HttpResponse(content_type='text/plain')
+	
+	response['Content=Disposition']= 'attachment; filename=venues.txt'
+
+	venues = Venue.objects.all()
+
+	lines = []
+	
+	for venue in venues:
+
+		lines.append(f'{venue.name}\n{venue.phone}\n{venue.web}\n{venue.email_address}\n\n')
+
+	response.writelines(lines)
+	return response
+
+
+
+def venue_csv(request):
+	response = HttpResponse(content_type='text/csv')
+	response['Conternt=Disposition'] = 'attachment; filename=venue.csv'
+
+	writer = csv.writer(response)
+	venues = Venue.objects.all()
+
+	writer.writerow(['Venue Name', 'Venue Address', 'Phone', 'Web', 'email_address'])
+	
+	for venue in venues: 
+		writer.writerow([venue.name, venue.address, venue.phone, venue.web,  venue.email_address])
+
+	return response
+
+
+def venue_pdf(request):
+	#create bytestresm buffer
+
+	buff = io.BytesIO()
+
+	# create a canvas 
+	canv = canvas.Canvas(buff, pagesize=letter, bottomup=0)
+
+	# create a textobject 
+	textob = canv.beginText()
+	textob.setTextOrigin(inch, inch)
+	textob.setFont('Helvetica', 14)
+
+
+	# add lines 
+	lines = ['this is line1',
+	'this is line 2']
+
+	# loop through 
+
+	for line in lines: 
+		textob.textLine(line)
+
+	canv.drawText(textob)
+	canv.showPage()
+	canv.save()
+	buff.seek(0)
+
+	return FileResponse(buff, as_attachment=True, filename='venue.pdf')
+
+
 
 
 def search_venues(request):
@@ -123,6 +209,7 @@ def show_venue(request, venue_id):
 	return render(request,"events/show_venue.html",{
 		'venue': venue, 
 		})
+
 
 
 def update_event(request, event_id):

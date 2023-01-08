@@ -18,7 +18,11 @@ urlpatterns = [
     path('add_event', views.add_event, name='add_event'),
     path('update_event<event_id>', views.update_event, name='update_event'),
     path('show_event/<event_id>', views.show_event, name='show_event'),
-
+    path('delete_event/<event_id>',views.delete_event, name='delete_event'),
+    path('delete_venue/<venue_id>', views.delete_venue, name='delete_venue'),
+    path('venue_text', views.venue_text, name='venue_text'), 
+    path('venue_csv', views.venue_csv, name='venue_csv'),
+    path('venue_pdf', views.venue_pdf, name='venue_pdf'),
 
 ]
    
